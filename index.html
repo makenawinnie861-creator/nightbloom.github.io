@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nightbloom Ink | Custom Tattoo Studio</title>
+  <meta name="description" content="Custom tribal, botanical and fine-line tattoos. Book your session and secure your slot with a deposit. 18+ only." />
+  <meta name="theme-color" content="#0f0c0e" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- 18+ GATE -->
+  <div class="gate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle" hidden>
+    <div class="gate__box">
+      <h2 id="gateTitle">Adults only</h2>
+      <p>Our studio only tattoos clients who are 18 or older. Please confirm your age to continue.</p>
+      <div class="gate__actions">
+        <button class="btn btn--solid" id="gateYes" type="button">I am 18 or older</button>
+        <button class="btn btn--ghost" id="gateNo" type="button">I am under 18</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav" id="top">
+    <a class="nav__brand" href="#top">Nightbloom Ink</a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#studio">Studio</a>
+      <a href="#book">Book a slot</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__art" aria-hidden="true">
+        <img src="assets/images/tribal-shoulder.jpeg" alt="" />
+      </div>
+      <div class="hero__text">
+        <h1>
+          <span class="hero__line">Skin is the</span>
+          <span class="hero__line hero__line--indent">oldest canvas.</span>
+        </h1>
+        <p class="hero__sub">Custom tribal, botanical and fine-line tattoos, drawn for one body and one story.</p>
+        <a class="btn btn--solid" href="#book">Book your session</a>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="work" id="work">
+      <h2 class="section-title">Recent work</h2>
+      <div class="work__grid">
+        <figure class="piece piece--a">
+          <img src="assets/images/tribal-sleeve.jpg" alt="Polynesian-style tribal half sleeve with a turtle, bird and island scene" loading="lazy" />
+          <figcaption>Tribal half sleeve</figcaption>
+        </figure>
+        <figure class="piece piece--b">
+          <img src="assets/images/butterfly-lowerback.jpeg" alt="Ornamental butterfly tattoo on the lower back" loading="lazy" />
+          <figcaption>Lower back butterfly</figcaption>
+        </figure>
+        <figure class="piece piece--c">
+          <img src="assets/images/floral-thigh.jpeg" alt="Hibiscus and leaf botanical tattoo on the thigh" loading="lazy" />
+          <figcaption>Hibiscus botanical</figcaption>
+        </figure>
+        <figure class="piece piece--d">
+          <img src="assets/images/ankle-rose.jpeg" alt="Rose, butterflies and rosary tattoo on the ankle" loading="lazy" />
+          <figcaption>Rose and rosary ankle piece</figcaption>
+        </figure>
+        <figure class="piece piece--e">
+          <img src="assets/images/tribal-shoulder.jpeg" alt="Bold black tribal shoulder piece" loading="lazy" />
+          <figcaption>Bold tribal shoulder</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- STUDIO -->
+    <section class="studio" id="studio">
+      <div class="studio__col">
+        <h2 class="section-title">How it works</h2>
+        <ol class="steps">
+          <li><strong>Send your idea.</strong> Tell us the design, size and where it goes on your body.</li>
+          <li><strong>Secure your slot.</strong> Choose a date and time, then pay the deposit by Cash App.</li>
+          <li><strong>Get inked.</strong> Bring a valid photo ID. The deposit comes off your final price.</li>
+        </ol>
+      </div>
+      <div class="studio__col studio__rules">
+        <h2 class="section-title">Good to know</h2>
+        <ul>
+          <li>Clients must be 18 or older. ID is checked at every appointment.</li>
+          <li>Deposits are non-refundable. Reschedule with 48 hours notice and we move it once.</li>
+          <li>Eat before you come, stay hydrated, and arrive on time.</li>
+          <li>No alcohol for 24 hours before your session.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="book" id="book">
+      <div class="book__intro">
+        <h2 class="section-title">Book a slot</h2>
+        <p>Fill in the form, send your deposit on Cash App, and we will confirm by email within 24 hours.</p>
+        <p class="book__deposit">Deposit: <strong id="depositLabel">$100</strong></p>
+      </div>
+
+      <form class="form" id="bookingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <!-- Spam trap -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true" />
+        <input type="hidden" name="_subject" value="New tattoo booking request" />
+
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required />
+          <small class="error" data-for="name"></small>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+            <small class="error" data-for="email"></small>
+          </div>
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+254 700 000000" required />
+            <small class="error" data-for="phone"></small>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="dob">Date of birth</label>
+            <input id="dob" name="date_of_birth" type="date" autocomplete="bday" required />
+            <small class="hint">You must be 18 or older.</small>
+            <small class="error" data-for="dob"></small>
+          </div>
+          <div class="field">
+            <label for="style">Style</label>
+            <select id="style" name="style" required>
+              <option value="">Choose a style</option>
+              <option>Tribal / Polynesian</option>
+              <option>Botanical / Floral</option>
+              <option>Fine line / Ornamental</option>
+              <option>Lettering</option>
+              <option>Custom, not sure yet</option>
+            </select>
+            <small class="error" data-for="style"></small>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="placement">Placement</label>
+            <input id="placement" name="placement" type="text" placeholder="e.g. upper arm, ankle, lower back" required />
+            <small class="error" data-for="placement"></small>
+          </div>
+          <div class="field">
+            <label for="size">Approx. size (cm)</label>
+            <input id="size" name="size" type="text" placeholder="e.g. 10 x 15" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="idea">Describe your idea</label>
+          <textarea id="idea" name="idea" rows="4" required></textarea>
+          <small class="error" data-for="idea"></small>
+        </div>
+
+        <fieldset class="field">
+          <legend>Pick a date</legend>
+          <input id="date" name="appointment_date" type="date" required aria-describedby="dateHint" />
+          <small class="hint" id="dateHint"></small>
+          <small class="error" data-for="date"></small>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>Pick a time</legend>
+          <div class="slots" id="slots" role="radiogroup" aria-label="Appointment time"></div>
+          <small class="error" data-for="slot"></small>
+        </fieldset>
+
+        <div class="pay">
+          <h3>Pay your deposit</h3>
+          <p>Send <strong class="js-deposit">$100</strong> to <strong class="js-cashtag">$YourCashTag</strong> on Cash App. Put your name in the note.</p>
+          <a class="btn btn--ghost" id="cashAppBtn" href="#" target="_blank" rel="noopener">Open Cash App</a>
+
+          <div class="field">
+            <label for="cashapp_name">Name on your Cash App account</label>
+            <input id="cashapp_name" name="cashapp_name" type="text" required />
+            <small class="error" data-for="cashapp_name"></small>
+          </div>
+
+          <label class="check">
+            <input type="checkbox" id="paid" name="deposit_sent" value="yes" required />
+            <span>I have sent the deposit and understand it is non-refundable.</span>
+          </label>
+          <small class="error" data-for="paid"></small>
+
+          <label class="check">
+            <input type="checkbox" id="adult" name="confirms_18_plus" value="yes" required />
+            <span>I confirm I am 18 or older and will bring valid photo ID.</span>
+          </label>
+          <small class="error" data-for="adult"></small>
+        </div>
+
+        <button class="btn btn--solid btn--full" type="submit" id="submitBtn">Send booking request</button>
+        <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__brand">Nightbloom Ink</p>
+    <p>Studio address, City, Country</p>
+    <p><a href="mailto:hello@yourstudio.com">hello@yourstudio.com</a> &nbsp;|&nbsp; <a href="tel:+254700000000">+254 700 000000</a></p>
+    <p><a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">Instagram</a> &nbsp;|&nbsp; <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a></p>
+    <p class="footer__small">18+ only. &copy; <span id="year"></span> Nightbloom Ink</p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
