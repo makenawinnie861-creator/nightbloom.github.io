@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Nightbloom Ink – tattoo studio website
 
 Static site: HTML, CSS and JavaScript. No build step.
@@ -32,3 +33,6 @@ Also replace in `index.html`: studio name, address, email, phone, Instagram and 
   before confirming by email.
 - The 18+ check (entry gate + date of birth + checkbox) runs in the browser. Always check ID in person.
 - Images live in `assets/images/`. Swap in your own work and keep the file names, or update `index.html`.
+=======
+# nightbloom.github.io
+>>>>>>> 3d292c48a99599db5e2c398bcc2c051f35a90a8c
